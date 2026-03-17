@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import FileUploader from './FileUploader';
 import AudioPlayer from './AudioPlayer';
+import AdSense from './AdSense';
 
 interface ToolLayoutProps {
     title: string;
@@ -47,16 +48,7 @@ export default function ToolLayout({ title, description, adPlaceholder, children
             </header>
 
             {/* Top Ad */}
-            <div style={{
-                marginBottom: '2rem',
-                padding: '1.5rem',
-                backgroundColor: 'rgba(255,255,255,0.02)',
-                border: '1px dashed var(--border-color)',
-                textAlign: 'center',
-                color: 'var(--text-muted)'
-            }}>
-                {adPlaceholder || '[Google AdSense Placeholder]'}
-            </div>
+            <AdSense />
 
             <div style={{ backgroundColor: 'var(--bg-base)', padding: '0', borderRadius: 'var(--radius-lg)' }}>
                 {!file ? (

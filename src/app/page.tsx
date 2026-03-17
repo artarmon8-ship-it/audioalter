@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ToolCard from '@/components/ToolCard';
+import AdSense from '@/components/AdSense';
 
 const EFFECTS_TOOLS = [
   { title: '3D Audio', desc: 'Enhance stereo sound with a 3D spatial effect', path: '/3d-audio', icon: '🎧' },
@@ -40,10 +41,7 @@ export default function Home() {
       </header>
 
       {/* Top Ad */}
-      <div id="ad-top" style={{ marginBottom: '3rem', padding: '1.5rem', backgroundColor: 'rgba(255,255,255,0.02)', border: '1px dashed var(--border-color)', textAlign: 'center', color: 'var(--text-muted)', borderRadius: 'var(--radius-md)' }}>
-        {/* Google AdSense Unit — Insert your ad-client and ad-slot here */}
-        [Google AdSense — 728x90 Leaderboard]
-      </div>
+      <AdSense />
 
       {/* Audio Effects Grid */}
       <section style={{ marginBottom: '3rem' }}>
@@ -63,9 +61,7 @@ export default function Home() {
       </section>
 
       {/* Mid Ad */}
-      <div id="ad-mid" style={{ marginBottom: '3rem', padding: '1.5rem', backgroundColor: 'rgba(255,255,255,0.02)', border: '1px dashed var(--border-color)', textAlign: 'center', color: 'var(--text-muted)', borderRadius: 'var(--radius-md)' }}>
-        [Google AdSense — 300x250 Rectangle]
-      </div>
+      <AdSense adFormat="rectangle" />
 
       {/* Other Tools Grid */}
       <section style={{ marginBottom: '3rem' }}>
@@ -104,9 +100,7 @@ export default function Home() {
       </section>
 
       {/* Bottom Ad */}
-      <div id="ad-bottom" style={{ marginBottom: '2rem', padding: '1.5rem', backgroundColor: 'rgba(255,255,255,0.02)', border: '1px dashed var(--border-color)', textAlign: 'center', color: 'var(--text-muted)', borderRadius: 'var(--radius-md)' }}>
-        [Google AdSense — 728x90 Leaderboard]
-      </div>
+      <AdSense />
     </div>
   );
 }

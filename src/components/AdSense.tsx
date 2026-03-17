@@ -1,0 +1,43 @@
+'use client';
+
+import React, { useEffect } from 'react';
+
+interface AdSenseProps {
+  adSlot?: string;
+  adClient?: string;
+  adFormat?: string;
+  fullWidthResponsive?: boolean;
+  style?: React.CSSProperties;
+}
+
+const AdSense: React.FC<AdSenseProps> = ({
+  adSlot,
+  adClient = 'ca-pub-9427573385256168',
+  adFormat = 'auto',
+  fullWidthResponsive = true,
+  style = { display: 'block' },
+}) => {
+  useEffect(() => {
+    try {
+      // @ts-ignore
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error('AdSense initialization error:', e);
+    }
+  }, []);
+
+  return (
+    <div className="adsense-container" style={{ overflow: 'hidden', minHeight: '90px', margin: '1rem 0' }}>
+      <ins
+        className="adsbygoogle"
+        style={style}
+        data-ad-client={adClient}
+        data-ad-slot={adSlot}
+        data-ad-format={adFormat}
+        data-full-width-responsive={fullWidthResponsive ? 'true' : 'false'}
+      />
+    </div>
+  );
+};
+
+export default AdSense;
