@@ -19,12 +19,20 @@ const AdSense: React.FC<AdSenseProps> = ({
 }) => {
   useEffect(() => {
     if (!adSlot) return;
-    try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.error('AdSense initialization error:', e);
-    }
+    
+    // Check if the script is loaded and pushed already for this element
+    const pushAd = () => {
+      try {
+        // @ts-ignore
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {
+        console.error('AdSense initialization error:', e);
+      }
+    };
+
+    // Delay slightly to ensure script is ready if loaded afterInteractive
+    const timeout = setTimeout(pushAd, 100);
+    return () => clearTimeout(timeout);
   }, [adSlot]);
 
   // Don't render anything if no ad slot is configured
