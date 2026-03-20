@@ -48,7 +48,7 @@ export default function ToolLayout({ title, description, adPlaceholder, children
             </header>
 
             {/* Top Ad */}
-            <AdSense />
+            <AdSense adSlot="8815993397" />
 
             <div style={{ backgroundColor: 'var(--bg-base)', padding: '0', borderRadius: 'var(--radius-lg)' }}>
                 {!file ? (
@@ -108,6 +108,11 @@ export default function ToolLayout({ title, description, adPlaceholder, children
                         )}
                     </div>
                 )}
+            </div>
+
+            {/* Bottom Ad */}
+            <div style={{ marginTop: '2rem' }}>
+                <AdSense adSlot="8815993397" />
             </div>
         </div>
     );

@@ -41,7 +41,7 @@ export default function Home() {
       </header>
 
       {/* Top Ad */}
-      <AdSense />
+      <AdSense adSlot="8815993397" />
 
       {/* Audio Effects Grid */}
       <section style={{ marginBottom: '3rem' }}>
@@ -61,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* Mid Ad */}
-      <AdSense adFormat="rectangle" />
+      <AdSense adSlot="8815993397" adFormat="rectangle" />
 
       {/* Other Tools Grid */}
       <section style={{ marginBottom: '3rem' }}>
@@ -100,7 +100,7 @@ export default function Home() {
       </section>
 
       {/* Bottom Ad */}
-      <AdSense />
+      <AdSense adSlot="8815993397" />
     </div>
   );
 }

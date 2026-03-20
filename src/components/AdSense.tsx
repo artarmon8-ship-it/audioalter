@@ -18,16 +18,20 @@ const AdSense: React.FC<AdSenseProps> = ({
   style = { display: 'block' },
 }) => {
   useEffect(() => {
+    if (!adSlot) return;
     try {
       // @ts-ignore
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.error('AdSense initialization error:', e);
     }
-  }, []);
+  }, [adSlot]);
+
+  // Don't render anything if no ad slot is configured
+  if (!adSlot) return null;
 
   return (
-    <div className="adsense-container" style={{ overflow: 'hidden', minHeight: '90px', margin: '1rem 0' }}>
+    <div className="adsense-container" style={{ overflow: 'hidden', margin: '1rem 0' }}>
       <ins
         className="adsbygoogle"
         style={style}
