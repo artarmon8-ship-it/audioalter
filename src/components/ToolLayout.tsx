@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import FileUploader from './FileUploader';
 import AudioPlayer from './AudioPlayer';
 import AdSense from './AdSense';
+import DebugStatus from './DebugStatus';
 
 interface ToolLayoutProps {
     title: string;
@@ -114,6 +115,9 @@ export default function ToolLayout({ title, description, adPlaceholder, children
             <div style={{ marginTop: '2rem' }}>
                 <AdSense adSlot="8815993397" />
             </div>
+
+            {/* Environment Status Check */}
+            <DebugStatus />
         </div>
     );
 }

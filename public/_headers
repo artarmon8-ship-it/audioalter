@@ -1,0 +1,6 @@
+# Cloudflare Headers for AudioToolkit
+# Enable SharedArrayBuffer for WASM tools while allowing AdSense (credentialless)
+
+/:path(3d-audio|bass-booster|equalizer|noise-reducer|pitch-shifter|reverb|reverse|stereo-panner|tempo|trimmer|volume|bpm-detector|converter|spectrogram|waveform)
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless
