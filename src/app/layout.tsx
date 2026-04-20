@@ -7,6 +7,9 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'AudioToolkit | Easy-to-use online audio tools',
   description: 'A collection of easy-to-use web tools for all your audio files. Free online audio effects and converters.',
+  other: {
+    'google-adsense-account': 'ca-pub-6488746175488314',
+  },
 };
 
 export default function RootLayout({
@@ -16,9 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta name="google-adsense-account" content="ca-pub-6488746175488314" />
-      </head>
+      <head />
       <body>
         <Script
           id="adsbygoogle-init"
