@@ -17,13 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-9427573385256168" />
+        <meta name="google-adsense-account" content="ca-pub-6488746175488314" />
       </head>
       <body>
         <Script
           id="adsbygoogle-init"
           strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9427573385256168"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6488746175488314"
           crossOrigin="anonymous"
         />
         <Navbar />
