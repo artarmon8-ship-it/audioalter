@@ -6,12 +6,11 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Apply isolation headers only to tool pages that need FFmpeg/SharedArrayBuffer
-        // Use regex for more robust matching
-        source: '/:path(3d-audio|bass-booster|equalizer|noise-reducer|pitch-shifter|reverb|reverse|stereo-panner|tempo|trimmer|volume|bpm-detector|converter|spectrogram|waveform)',
+        // Apply isolation headers globally to guarantee FFmpeg/SharedArrayBuffer works
+        source: '/(.*)',
         headers: [
           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
-          { key: 'Cross-Origin-Embedder-Policy', value: 'credentialless' },
+          { key: 'Cross-Origin-Embedder-Policy', value: 'require-corp' },
         ],
       },
     ];
